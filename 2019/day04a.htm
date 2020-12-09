@@ -1,0 +1,52 @@
+<script>
+	var start = 138241; // first valid number is 138888
+	var end = 674034; // last valid number is 669999
+	var passwords = [];
+
+	for ( var p = start; p <= end; p++ ) {
+		var digits = p.toString();
+
+		if ( validateLength( digits ) && validateAdjacentDigitsSame( digits ) && validateDigitsIncrease( digits ) ) {
+			passwords.push( digits );
+		}
+	}
+
+	console.log( passwords.length );
+
+	function validateLength( digits ) {
+		return ( digits.length == 6 ) ? true : false;
+	}
+
+	function validateAdjacentDigitsSame( digits ) {
+		var pass = false;
+		var previous = -1;
+
+		for ( var d = 0; d < digits.length; d++ ) {
+			var digit = digits.substr( d, 1 );
+
+			if ( digit == previous ) {
+				pass = true;
+			}
+			previous = digit;
+		}
+
+		return pass;
+	}
+
+	function validateDigitsIncrease( digits ) {
+		var pass = true;
+		var previous = -1;
+
+		for ( var d = 0; d < digits.length; d++ ) {
+			var digit = parseInt( digits.substr( d, 1 ) );
+
+			if ( digit < previous ) {
+				pass = false;
+			}
+
+			previous = digit;
+		}
+
+		return pass;
+	}
+</script>
