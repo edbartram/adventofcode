@@ -15,7 +15,7 @@ for ( var p = start; p <= end; p++ ) {
 	}
 }
 
-console.log( passwords.length ); // 1627 is incorrect
+console.log( passwords.length );
 
 
 function validateLength( digits ) {
