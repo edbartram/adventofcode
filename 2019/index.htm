@@ -1,0 +1,21 @@
+<script>
+	var url = window.location.href;
+
+	if ( url.indexOf( "run=" ) >= 0 ) {
+		var run = /run=([^&]+)/.exec(url)[1];
+
+		var include = "<script type='text/javascript' src='" + run + "' async><\/script>";
+
+		document.write( include );
+	}
+</script>
+
+<ul>
+	<li><a href="index.htm?run=day04a.js">Day 4, Part 1</a></li>
+	<li><a href="index.htm?run=day03b.js">Day 3, Part 2</a></li>
+	<li><a href="index.htm?run=day03a.js">Day 3, Part 1</a></li>
+	<li><a href="index.htm?run=day02b.js">Day 2, Part 2</a></li>
+	<li><a href="index.htm?run=day02a.js">Day 2, Part 1</a></li>
+	<li><a href="index.htm?run=day01b.js">Day 1, Part 2</a></li>
+	<li><a href="index.htm?run=day01a.js">Day 1, Part 1</a></li>
+</ul>
